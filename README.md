@@ -14,8 +14,8 @@ The following indicates the CI and coverage status.
 
 [![Build Status](https://travis-ci.org/tpayne/CloudFunctions.svg?branch=main)](https://travis-ci.org/tpayne/CloudFunctions)
 
-Cloud Function Examples
------------------------
+GCP Cloud Function Examples
+---------------------------
 The examples contained in this repo run on Maven and GCP. They are based in the following directories.
 
 >| Project | Description | 

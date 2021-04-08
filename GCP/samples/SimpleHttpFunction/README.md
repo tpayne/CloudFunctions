@@ -41,8 +41,6 @@ If you wish to deploy the function to GCP, you can use the following...
         --runtime=java11 \
         --trigger-http \
         --source=target
-    Deploying function (may take a while - up to 2 minutes)...⠹                                                  
-    For Cloud Build Stackdriver Logs, visit: https://console.cloud.google.com/logs/viewer?project=investdemo-300915&advancedFilter=resource.type%3Dbuild%0Aresource.labels.build_id%3D12f816ee-8eac-4201-9d0d-c085b224ef3d%0AlogName%3Dprojects%2Finvestdemo-300915%2Flogs%2Fcloudbuild
     Deploying function (may take a while - up to 2 minutes)...done.                                              
     availableMemoryMb: 256
     buildId: 12f816ee-8eac-4201-9d0d-c085b224ef3d
@@ -55,8 +53,6 @@ If you wish to deploy the function to GCP, you can use the following...
       deployment-tool: cli-gcloud
     name: projects/investdemo-300915/locations/us-central1/functions/simplehttpfunction
     runtime: java11
-    serviceAccountEmail: investdemo-300915@appspot.gserviceaccount.com
-    sourceUploadUrl: https://storage.googleapis.com/gcf-upload-us-central1-e5e3084a-5b2f-4b02-b063-ce7668f0beb1/d0e400a3-7071-4340-b1fe-80abfde58fa3.zip?GoogleAccessId=service-127131513455@gcf-admin-robot.iam.gserviceaccount.com&Expires=1617892352&Signature=ZikZYAq%2BldK%2FAS1lSe%2Fs51JjiaVRvqYC1uad87nh8xrLJNn8kdB5WZKa8b%2F1XjyGZucnxmGFV%2BndliiLJzoxbdsy7RTjKhOVSfB2QMxIQxNOpbMY5VoJQIHW6CzjEB%2FDq0MjTohrJ6wpu8DIQmugbcEfjaBDflTTrwg%2Bk6z36DFSUg03zWMZjhi9h0VDWB3AdeyTSgdzTyEOqMhISJYOwazf8%2FYKdwWQEO7STcouWEM3W9pSp7NT9JyXKcK7p1aINrrsiWT64iJwk9n3OV7iwyCXK0fB10E%2FV23y3V0jqLrDOUIhIawCAchJNi6RfTMQQbjX1u0UDs%2B%2BbFqvSMFGAA%3D%3D
     status: ACTIVE
     timeout: 60s
     updateTime: '2021-04-08T14:03:48.689Z'

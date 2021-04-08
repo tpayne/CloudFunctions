@@ -26,6 +26,7 @@ The examples contained in this repo run on Maven and GCP. They are based in the 
 Notes
 -----
 The following notes may be useful.
+
 `Google Cloud Platform`
 - https://cloud.google.com/functions/
 - https://cloud.google.com/functions/docs/quickstarts

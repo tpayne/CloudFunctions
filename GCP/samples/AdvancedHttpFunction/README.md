@@ -81,4 +81,6 @@ You can clean the function up using...
     % mvn clean
     % gcloud functions delete advancedhttpfunction
 
-
+Notes
+-----
+* This sample uses plugins in the Maven file to ensure ALL referenced `.jar` dependencies are copied to the `target/` directory. This means that they are all loaded into the Cloud function deployment in GCP. This is needed otherwise you get missing dependency/class not found errors when the function is deployed to GCP

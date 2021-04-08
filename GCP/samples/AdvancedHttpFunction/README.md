@@ -41,7 +41,6 @@ If you wish to deploy the function to GCP, you can use the following...
         --runtime=java11 \
         --trigger-http \
         --source=target
-    Deploying function (may take a while - up to 2 minutes)...⠹                                                  
     Deploying function (may take a while - up to 2 minutes)...done.                                              
     availableMemoryMb: 256
     buildId: 999a237f-de4c-4569-b38f-69471ef804cc

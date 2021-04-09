@@ -34,3 +34,4 @@ The following notes may be useful.
 - https://cloud.google.com/functions/docs/how-to
 - https://cloud.google.com/functions/docs/tutorials
 - https://cloud.google.com/functions/docs/apis
+- https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs

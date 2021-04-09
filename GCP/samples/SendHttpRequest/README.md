@@ -56,6 +56,10 @@ If you wish to deploy the function to GCP, you can use the following...
     updateTime: '2021-04-09T12:38:46.416Z'
     versionId: '1'
 
+If any errors occur during deployment, then you can debug them with...
+
+    % gcloud functions logs read
+    
 You can then invoke it via...
 
     % curl "https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest"

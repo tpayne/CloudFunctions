@@ -9,9 +9,9 @@
   <artifactId>samples.gcp.functions-advancedhttpfunction</artifactId>
 
   <parent>
-    <groupId>com.google.cloud.samples</groupId>
-    <artifactId>shared-configuration</artifactId>
-    <version>1.0.21</version>
+    <groupId>com.example.cloud.functions</groupId>
+    <artifactId>samples.gcp.functions</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <properties>

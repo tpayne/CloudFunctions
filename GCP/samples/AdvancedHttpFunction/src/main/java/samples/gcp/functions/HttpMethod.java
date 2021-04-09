@@ -22,10 +22,8 @@ import com.google.gson.JsonObject;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.IOException;
 import java.io.PrintWriter;
 
-import java.net.HttpURLConnection;
 import java.net.HttpURLConnection;
 
 import java.nio.charset.StandardCharsets;

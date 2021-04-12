@@ -112,6 +112,10 @@ Notes
 -----
 Obviously, this function can have a lot done to it to tidy up the output, but that is left to the user to do.
 
-For more information on authentication, please see...
+For more information on authentication and Spanner, please see...
 - https://cloud.google.com/functions/docs/securing/authenticating
+- https://developers.google.com/identity/sign-in/web/sign-in
+- https://cloud.google.com/sdk/gcloud/reference/spanner/databases/execute-sql
+- https://cloud.google.com/spanner/docs/modify-gcloud
+- https://cloud.google.com/sdk/gcloud/reference/spanner/databases/ddl/update
 

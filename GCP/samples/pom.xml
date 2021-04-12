@@ -26,6 +26,7 @@
 
   <modules>
     <module>AdvancedHttpFunction</module>
+    <module>NoSQLSpanner</module>
     <module>SimpleHttpFunction</module>
     <module>SendHttpRequest</module>
   </modules>

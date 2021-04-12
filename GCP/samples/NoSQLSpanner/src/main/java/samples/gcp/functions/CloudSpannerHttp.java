@@ -51,7 +51,7 @@ public class CloudSpannerHttp implements HttpFunction {
 
   private static final Logger logger = Logger.getLogger(CloudSpannerHttp.class.getName());
 
-  // The LazySpannerInitializer instance is shared across all instances of the HelloSpanner class.
+  // The LazySpannerInitializer instance is shared across all instances of the this class.
   // It will create a Spanner instance the first time one is requested, and continue to return that
   // instance for all subsequent requests.
   private static final LazySpannerInitializer SPANNER_INITIALIZER = new LazySpannerInitializer();
@@ -79,6 +79,7 @@ public class CloudSpannerHttp implements HttpFunction {
     return SPANNER_INITIALIZER.get().getDatabaseClient(databaseId);
   }
 
+  // Function to process the SQL query
   private void 
   processQuery(final String instanceName,
                        final String dbName,

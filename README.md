@@ -23,7 +23,7 @@ The examples contained in this repo run on Maven and GCP. They are based in the 
 >| [samples/GCP/AdvancedHttpFunction/](https://github.com/tpayne/CloudFunctions/tree/main/GCP/samples/AdvancedHttpFunction) | This sample will use Maven to build advance HTTP functions |
 >| [samples/GCP/NoSQLSpanner/](https://github.com/tpayne/CloudFunctions/tree/main/GCP/samples/NoSQLSpanner) | This sample will use Maven to build NoSQL query functions using Spanner |
 >| [samples/GCP/SimpleHttpFunction/](https://github.com/tpayne/CloudFunctions/tree/main/GCP/samples/SimpleHttpFunction) | This sample will use Maven to build simple HTTP functions |
->| [samples/GCP/SendHttpRequest/](https://github.com/tpayne/CloudFunctions/tree/main/GCP/samples/SendHttpRequest) | This sample will use Maven to build HTTP relay functions. This also includes an example on how to deploy an API Gateway |
+>| [samples/GCP/SendHttpRequest/](https://github.com/tpayne/CloudFunctions/tree/main/GCP/samples/SendHttpRequest) | This sample will use Maven to build HTTP relay functions. `This also includes an example on how to deploy an API Gateway` |
 
 Notes
 -----

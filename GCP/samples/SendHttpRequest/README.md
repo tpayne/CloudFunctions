@@ -80,7 +80,8 @@ Enable the API gateway services (if needed)
 
 Create your API definition
 
-    % gcloud api-gateway apis create sendhttprequest --project=$(gcloud config get-value project)
+    % gcloud api-gateway apis create sendhttprequest \
+        --project=$(gcloud config get-value project)
     % gcloud api-gateway apis describe sendhttprequest
     createTime: '2021-04-13T13:20:19.745554655Z'
     displayName: sendhttprequest
@@ -98,7 +99,9 @@ Check you have a service account you can use for the API gateway. If not, then c
     % gcloud iam service-accounts list
     % # Create an account via...
     % gcloud iam service-accounts sendhttprequest \
-                add-iam-policy-binding --member user:<USER_EMAIL> -role roles/iam.serviceAccountUser
+                add-iam-policy-binding \
+                --member user:<USER_EMAIL> \
+                -role roles/iam.serviceAccountUser
 
 Grant them access to the API services
 

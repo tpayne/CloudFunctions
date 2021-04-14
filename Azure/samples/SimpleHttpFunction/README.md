@@ -22,7 +22,7 @@ Then in another console window, do...
     % curl "http://localhost:7071/api/HttpMethod/?username=testuserfred&userpriv=normal-user"
     <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br>
     % curl -X POST -d username=testuserfred -d userpriv=normal-user http://localhost:7071/api/HttpMethod/
-    <p>This is a GET/POST funtion call<br>User name is 'username=testuserfred&userpriv=normal-user' <br>User privelege is 'username=testuserfred&userpriv=normal-user' <br></p>
+    <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br></p>
     
 The function will parse the parameters "username" and "userpriv" then display their values with HTTP wrapping.
 
@@ -48,6 +48,5 @@ You can clean the function up using...
 
 Issues
 ------
-- The POST function needs tidying up as it is currently getting everything
 - On Mac, the JAVA_HOME needs to be faked for the azure-functions:run to work properly - known issue?
 

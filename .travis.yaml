@@ -1,4 +1,4 @@
 language: java
 sudo: false
 
-script: echo "Running build"; cd GCP/samples/ && mvn clean package
+script: echo "Running build"; (cd GCP/samples/ && mvn clean package) && (cd Azure/samples/ && mvn clean package)

@@ -49,4 +49,5 @@ You can clean the function up using...
 Issues
 ------
 - The POST function needs tidying up as it is currently getting everything
+- On Mac, the JAVA_HOME needs to be faked for the azure-functions:run to work properly - known issue?
 

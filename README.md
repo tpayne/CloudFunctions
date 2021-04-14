@@ -41,6 +41,8 @@ The following notes may be useful.
 - https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-java?tabs=bash%2Cazure-cli%2Cbrowser
 - https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#v2
 - https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions?view=azure-java-stable
+- https://docs.microsoft.com/en-us/azure/azure-functions/
+- https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption
 
 `Google Cloud Platform`
 - https://cloud.google.com/functions/

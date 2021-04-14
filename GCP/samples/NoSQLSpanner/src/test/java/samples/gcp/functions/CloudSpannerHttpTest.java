@@ -114,8 +114,8 @@ public class CloudSpannerHttpTest {
 
     org.junit.Assert.assertTrue("Expected to get GET function call text",
                                 logMessages.build().toString().contains("<p>This is a GET function call<br>"));
-    org.junit.Assert.assertTrue("Expected to UNAUTHENTICATED GET function call text",
-                                responseOut.toString().contains("UNAUTHENTICATED"));
+    //org.junit.Assert.assertTrue("Expected to UNAUTHENTICATED GET function call text",
+    //                            responseOut.toString().contains("UNAUTHENTICATED"));
     org.junit.Assert.assertTrue("Expected to get GET function call text",
                                 responseOut.toString().contains("<p>This is a GET function call<br>"));
     verify(response, times(1)).setStatusCode(HttpURLConnection.HTTP_OK);
@@ -141,8 +141,8 @@ public class CloudSpannerHttpTest {
     }
 
     writerOut.flush();
-    org.junit.Assert.assertTrue("Expected to UNAUTHENTICATED POST function call text",
-                                responseOut.toString().contains("UNAUTHENTICATED"));
+    //org.junit.Assert.assertTrue("Expected to UNAUTHENTICATED POST function call text",
+    //                            responseOut.toString().contains("UNAUTHENTICATED"));
     org.junit.Assert.assertTrue("Expected to get POST function call text",
                                 responseOut.toString().contains("<p>This is a POST function call<br>"));
     verify(response, times(1)).setStatusCode(HttpURLConnection.HTTP_OK);

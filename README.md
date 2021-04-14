@@ -14,6 +14,14 @@ The following indicates the CI and coverage status.
 
 [![Build Status](https://travis-ci.org/tpayne/CloudFunctions.svg?branch=main)](https://travis-ci.org/tpayne/CloudFunctions)
 
+Azure Cloud Function Examples
+-----------------------------
+The examples contained in this repo run on Maven and Azure. They are based in the following directories.
+
+>| Project | Description | 
+>| ------- | ----------- |
+>| [samples/Azure/SimpleHttpFunction/](https://github.com/tpayne/CloudFunctions/tree/main/Azure/samples/SimpleHttpFunction) | This sample will use Maven to build simple HTTP functions |
+
 GCP Cloud Function Examples
 ---------------------------
 The examples contained in this repo run on Maven and GCP. They are based in the following directories.
@@ -28,6 +36,11 @@ The examples contained in this repo run on Maven and GCP. They are based in the 
 Notes
 -----
 The following notes may be useful.
+
+`Azure`
+- https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-java?tabs=bash%2Cazure-cli%2Cbrowser
+- https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#v2
+- https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions?view=azure-java-stable
 
 `Google Cloud Platform`
 - https://cloud.google.com/functions/

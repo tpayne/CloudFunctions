@@ -20,6 +20,9 @@ public class Function {
     private String getParam(HttpRequestMessage<Optional<String>> request, final String paramName) {
         String query = request.getQueryParameters().get(paramName);
 	String value = new String(request.getBody().orElse(query));
+	
+	// We need to massage the string being returned to get rid of POST/GET differences in string 
+	// construction, so the results are the same
 	String searchStr = paramName+"=";
 	if (value.contains(searchStr)) {
             int loc = value.indexOf(searchStr)+searchStr.length();

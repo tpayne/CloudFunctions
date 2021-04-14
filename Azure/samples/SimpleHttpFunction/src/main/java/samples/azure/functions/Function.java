@@ -19,7 +19,15 @@ public class Function {
     // Get parameter value...
     private String getParam(HttpRequestMessage<Optional<String>> request, final String paramName) {
         String query = request.getQueryParameters().get(paramName);
-        String value = request.getBody().orElse(query);
+	String value = new String(request.getBody().orElse(query));
+	String searchStr = paramName+"=";
+	if (value.contains(searchStr)) {
+            int loc = value.indexOf(searchStr)+searchStr.length();
+            value = value.substring(loc,value.length());
+	    if (value.indexOf('&')>0) {
+                value = value.substring(0,value.indexOf('&'));
+	    }
+	}
 
 	return value;
     }

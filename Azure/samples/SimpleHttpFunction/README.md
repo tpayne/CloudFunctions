@@ -37,7 +37,7 @@ If you wish to deploy the function to Azure, you can use the following...
 You can then invoke it via...
 
     % curl "https://simplehttpfunction-20210414130559868.azurewebsites.net/api/httpmethod/?username=testuserfred&userpriv=normal"
-    <p>This is a GET funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal' <br></p>
+    <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal' <br></p>
 
 Cleaning Up
 -----------
@@ -46,5 +46,7 @@ You can clean the function up using...
     % mvn clean
     % az functionapp delete -n "simplehttpfunction-20210414130559868" -g "java-functions-group"
 
-
+Issues
+------
+- The POST function needs tidying up as it is currently getting everything
 

@@ -20,7 +20,7 @@
         <java.version>11</java.version>
         <azure.functions.maven.plugin.version>1.10.1</azure.functions.maven.plugin.version>
         <azure.functions.java.library.version>1.4.2</azure.functions.java.library.version>
-        <functionAppName>samples.azure.functions-simplehttpfunction-20210414130559868</functionAppName>
+        <functionAppName>simplehttpfunction-20210414130559868</functionAppName>
         <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
     </properties>
 

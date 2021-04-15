@@ -21,6 +21,8 @@ The examples contained in this repo run on Maven and Azure. They are based in th
 
 >| Project | Description | 
 >| ------- | ----------- |
+>| [samples/Azure/AdvancedHttpFunction/](https://github.com/tpayne/CloudFunctions/tree/main/Azure/samples/AdvancedHttpFunction) | This sample will use Maven to build advance HTTP functions |
+>| [samples/Azure/SendHttpRequest/](https://github.com/tpayne/CloudFunctions/tree/main/Azure/samples/SendHttpRequest) | This sample will use Maven to build HTTP relay functions |
 >| [samples/Azure/SimpleHttpFunction/](https://github.com/tpayne/CloudFunctions/tree/main/Azure/samples/SimpleHttpFunction) | This sample will use Maven to build simple HTTP functions |
 
 GCP Cloud Function Examples

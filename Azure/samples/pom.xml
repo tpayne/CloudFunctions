@@ -21,5 +21,6 @@
   <modules>
     <module>SendHttpRequest</module>
     <module>SimpleHttpFunction</module>
+    <module>AdvancedHttpFunction</module>
   </modules>
 </project>

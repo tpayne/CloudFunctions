@@ -9,12 +9,6 @@
   <artifactId>samples.azure.functions</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-
-  <parent>
-    <groupId>com.google.cloud.samples</groupId>
-    <artifactId>shared-configuration</artifactId>
-    <version>1.0.21</version>
-  </parent>
   
   <developers>
     <developer>
@@ -25,6 +19,7 @@
   </developers>
 
   <modules>
+    <module>SendHttpRequest</module>
     <module>SimpleHttpFunction</module>
   </modules>
 </project>

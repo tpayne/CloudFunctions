@@ -18,21 +18,35 @@ public class Function {
 
     // Get parameter value...
     private String getParam(HttpRequestMessage<Optional<String>> request, final String paramName) {
-        String query = request.getQueryParameters().get(paramName);
-	String value = new String(request.getBody().orElse(query));
-	
-	// We need to massage the string being returned to get rid of POST/GET differences in string 
-	// construction, so the results are the same
-	String searchStr = paramName+"=";
-	if (value.contains(searchStr)) {
-            int loc = value.indexOf(searchStr)+searchStr.length();
-            value = value.substring(loc,value.length());
-	    if (value.indexOf('&')>0) {
-                value = value.substring(0,value.indexOf('&'));
-	    }
-	}
+        if (request == null) {
+            return null;
+        }
 
-	return value;
+        String query = null;
+        String value = null;
+
+        try {
+            if (!request.getQueryParameters().isEmpty()) {
+                query = request.getQueryParameters().get(paramName);
+                value = new String(request.getBody().orElse(query));
+            } else {
+                value = new String(request.getBody().orElse(query));
+            }
+
+            // We need to massage the string being returned to get rid of POST/GET differences in string 
+            // construction, so the results are the same
+            String searchStr = paramName+"=";
+            if (value.contains(searchStr)) {
+                int loc = value.indexOf(searchStr)+searchStr.length();
+                value = value.substring(loc,value.length());
+                if (value.indexOf('&')>0) {
+                    value = value.substring(0,value.indexOf('&'));
+                }
+            }
+            return value;
+        } catch(Exception e) {
+            return null;
+        }
     }
 
     /**
@@ -50,19 +64,27 @@ public class Function {
             final ExecutionContext context) {
         context.getLogger().info("Java HTTP trigger processed a request.");
 
-        // Parse query parameter
-        final String userName = getParam(request,"username");
-        final String userPriv = getParam(request,"userpriv");
+        try {
+            // Parse query parameter
+            String userName = getParam(request,"username");
+            String userPriv = getParam(request,"userpriv");
 
-        StringBuilder str = new StringBuilder();
-        str.append("<p>This is a GET/POST funtion call<br>");
-        str.append("User name is '"+userName+"' <br>");
-        str.append("User privelege is '"+userPriv+"' <br></p>");
+            if (userName == null || userPriv == null) {
+                return request.createResponseBuilder(HttpStatus.BAD_REQUEST)
+                    .body("The required parameters have not been specified").build();
+            } 
 
-        if (userName == null) {
-            return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("The required parameters have not been specified").build();
-        } else {
+            StringBuilder str = new StringBuilder();
+            str.append("<p>This is a GET/POST funtion call<br>");
+            str.append("User name is '"+userName+"' <br>");
+            str.append("User privelege is '"+userPriv+"' <br></p>");
+            userName = null;
+            userPriv = null;
             return request.createResponseBuilder(HttpStatus.OK).body(str.toString()).build();
+        } catch(Exception e) {
+          context.getLogger().severe("Trapped exception "+e.toString());
         }
+        return request.createResponseBuilder(HttpStatus.BAD_REQUEST)
+                  .body("The function errored").build();
     }
 }

@@ -1,9 +1,7 @@
-SimpleHttpFunction Sample
-=========================
+AdvancedHttpFunction Sample
+===========================
 
-This sample shows how to use Azure Cloud Functions to process a simple HTTP call.
-
-The function call will support a GET/POST requests with two parameters.
+This sample shows how to use Azure Cloud Functions to process a complex HTTP call that supports JSON, GET and POST requests.
 
 Dependencies
 ------------
@@ -20,10 +18,14 @@ To run the sample, please do the following...
 Then in another console window, do...
 
     % curl "http://localhost:7071/api/HttpMethod/?username=testuserfred&userpriv=normal-user"
-    <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br>
+    <p>This is a GET/POST TEXT funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br></p>
     % curl -X POST -d username=testuserfred -d userpriv=normal-user http://localhost:7071/api/HttpMethod/
-    <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br></p>
-    
+    <p>This is a GET/POST TEXT funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br></p>
+    % curl -H "Content-Type: application/json" \
+        --request POST \
+        --data '{"username":"testuserfred","userpriv":"delta-system"}' "http://localhost:7071/api/HttpMethod/"
+    <p>This is a GET/POST JSON funtion call<br>User name is 'testuserfred' <br>User privelege is 'delta-system' <br></p>
+       
 The function will parse the parameters "username" and "userpriv" then display their values with HTTP wrapping.
 
 Other functions, like a PUT will be rejected and not do anything.
@@ -36,19 +38,27 @@ If you wish to deploy the function to Azure, you can use the following...
     
 You can then invoke it via...
 
-    % curl "https://simplehttpfunction-20210414130559868.azurewebsites.net/api/httpmethod/?username=testuserfred&userpriv=normal"
-    <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal' <br></p>
+    % curl "https://advancedhttpfunction-20210414130559868.azurewebsites.net/api/httpmethod/?username=testuserfred&userpriv=normal"
+    <p>This is a GET/POST TEXT funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal' <br></p>
+    % curl -X POST -d username=testuserfred -d userpriv=normal-user \
+        https://advancedhttpfunction-20210414130559868.azurewebsites.net/api/httpmethod/
+    <p>This is a GET/POST TEXT funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br></p>
+    % curl -H "Content-Type: application/json" \
+        --request POST \
+        --data '{"username":"testuserfred","userpriv":"delta-system"}' \
+        "https://advancedhttpfunction-20210414130559868.azurewebsites.net/api/httpmethod/"
+    <p>This is a GET/POST JSON funtion call<br>User name is 'testuserfred' <br>User privelege is 'delta-system' <br></p>
 
 To view errors or logs of the function, you can do...
 
-    % func azure functionapp logstream simplehttpfunction-20210414130559868
+    % func azure functionapp logstream advancedhttpfunction-20210414130559868
     
 Cleaning Up
 -----------
 You can clean the function up using...
 
     % mvn clean
-    % az functionapp delete -n "simplehttpfunction-20210414130559868" -g "java-functions-group"
+    % az functionapp delete -n "advancedhttpfunction-20210414130559868" -g "java-functions-group"
 
 Issues
 ------

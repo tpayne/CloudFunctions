@@ -39,6 +39,10 @@ You can then invoke it via...
     % curl "https://simplehttpfunction-20210414130559868.azurewebsites.net/api/httpmethod/?username=testuserfred&userpriv=normal"
     <p>This is a GET/POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal' <br></p>
 
+To view errors or logs of the function, you can do...
+
+    % func azure functionapp logstream simplehttpfunction-20210414130559868
+    
 Cleaning Up
 -----------
 You can clean the function up using...

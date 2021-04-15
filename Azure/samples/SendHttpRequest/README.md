@@ -39,6 +39,10 @@ You can then invoke it via...
     % curl -X POST -d targetURL=https://www.google.com \
         https://sendhttprequest-20210414130559868.azurewebsites.net/api/sendhttprequest/
     <p>This is a GET/POST funtion call<br><br>Received code '200' from url 'https://www.google.com'</p>
+    
+To view errors or logs of the function, you can do...
+
+    % func azure functionapp logstream sendhttprequest-20210414130559868
 
 Cleaning Up
 -----------

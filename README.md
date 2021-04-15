@@ -54,3 +54,7 @@ The following notes may be useful.
 - https://cloud.google.com/functions/docs/tutorials
 - https://cloud.google.com/functions/docs/apis
 - https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs
+
+Issues
+------
+- On Mac Azure needs the JAVA_HOME faked when running functions locally

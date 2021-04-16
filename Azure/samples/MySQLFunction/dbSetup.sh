@@ -268,4 +268,6 @@ if [ $? -gt 0 ]; then
     exit 1
 fi
 
+rmFile "${tmpFile}"
+
 exit 0

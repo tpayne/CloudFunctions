@@ -80,4 +80,5 @@ Issues
 ------
 - On Mac, the JAVA_HOME needs to be faked for the azure-functions:run to work properly - known issue?
 - The password used here is just random junk and bears no relevance to any I use
+- The unit tests work on the basis that the target system does not exist. Therefore if the system does exist, then the unit tests will fail. This is not an issue, you just need to skip the unit tests if you have created a default database system using the provided script.
 

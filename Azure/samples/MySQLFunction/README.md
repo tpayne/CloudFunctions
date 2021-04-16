@@ -79,4 +79,5 @@ You can clean the function up using...
 Issues
 ------
 - On Mac, the JAVA_HOME needs to be faked for the azure-functions:run to work properly - known issue?
+- The password used here is just random junk and bears no relevance to any I use
 

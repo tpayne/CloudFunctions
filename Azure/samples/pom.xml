@@ -22,5 +22,6 @@
     <module>SendHttpRequest</module>
     <module>SimpleHttpFunction</module>
     <module>AdvancedHttpFunction</module>
+    <module>MySQLFunction</module>
   </modules>
 </project>

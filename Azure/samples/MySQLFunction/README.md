@@ -44,6 +44,16 @@ This function also supports converting output to JSON format. To do this, please
 `jsontxt=true` to the appropriate CURL call. This will return the data in JSON, rather than HTML
 format.
 
+    % curl -X POST -d host=testdbmysql-server.mysql.database.azure.com \
+          -d dbname=testdbmysql -d username=mysqladmin@testdbmysql-server \
+          -d jsontxt=true \
+          -d passwd=Ermd32_-1a2b3c http://localhost:7071/api/MySQLHttpFunction/
+    {"0-NAME00":{"clientId":0,"clientName":"NAME00","clientCompany":"COMPANY00"},
+    "1-NAME01":{"clientId":1,"clientName":"NAME01","clientCompany":"COMPANY01"},
+    "2-NAME02":{"clientId":2,"clientName":"NAME02","clientCompany":"COMPANY02"},
+    "3-NAME03":{"clientId":3,"clientName":"NAME03","clientCompany":"COMPANY03"},
+    "4-NAME04":{"clientId":4,"clientName":"NAME04","clientCompany":"COMPANY04"}}
+
 Deploying the Function to Azure
 -------------------------------
 If you wish to deploy the function to Azure, you can use the following...

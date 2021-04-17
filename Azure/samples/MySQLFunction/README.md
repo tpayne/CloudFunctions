@@ -40,6 +40,10 @@ The function will parse the parameters, connect to the DB and then display the r
 
 Other functions, like a PUT will be rejected and not do anything.
 
+This function also supports converting output to JSON format. To do this, please add the parameter 
+`jsontxt=true` to the appropriate CURL call. This will return the data in JSON, rather than HTML
+format.
+
 Deploying the Function to Azure
 -------------------------------
 If you wish to deploy the function to Azure, you can use the following...

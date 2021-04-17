@@ -55,6 +55,7 @@ The following notes may be useful.
 - https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions?view=azure-java-stable
 - https://docs.microsoft.com/en-us/azure/azure-functions/
 - https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption
+- https://docs.microsoft.com/en-us/azure/azure-functions/functions-get-started?pivots=programming-language-java
 
 `Google Cloud Platform`
 - https://cloud.google.com/functions/

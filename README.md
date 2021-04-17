@@ -1,7 +1,15 @@
 CloudFunctions Examples Repo
 ============================
 
-This repo contains various examples of Cloud Functions.
+This repo contains various examples of Cloud Functions. These functions are NOT intended for production use, but rather to show how to construct them.
+
+For things like getting return data and passing security related information, these functions are not good examples to use.
+
+For passing security related information, it is best to use `Authentication header`(https://en.wikipedia.org/wiki/Basic_access_authentication) and HTTPS.
+
+For getting return data, it is best to convert the information to JSON and then return a JSON string to the caller for processing into objects.
+
+Implementation examples of these are however beyond the scope of these demos and are left to the reader to source.
 
 Status
 ------

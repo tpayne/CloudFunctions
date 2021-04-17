@@ -93,6 +93,7 @@ public class MySQLHttpFunction {
             String dbName = getParam(request,"dbname");
             String userName = getParam(request,"username");
             String passwd = getParam(request,"passwd");
+            String jsonTxt = getParam(request,"jsontxt");
 
             if (host == null || dbName == null ||
                 userName == null || passwd == null) {
@@ -100,8 +101,12 @@ public class MySQLHttpFunction {
                     .body("The required parameters have not been specified").build();
             } 
 
+            boolean jsonFormat = false;
+            if (jsonTxt != null && jsonTxt.equals("true")) {
+                jsonFormat = true;
+            }
             StringBuilder str = new StringBuilder(processSQL(host,dbName,userName,
-                                                  passwd,context));
+                                                  passwd,jsonFormat,context));
 
             return request.createResponseBuilder(HttpStatus.OK).body(str.toString()).build();
         } catch(Exception e) {
@@ -121,6 +126,7 @@ public class MySQLHttpFunction {
             String dbName = (String)body.get("dbname");
             String userName = (String)body.get("username");
             String passwd = (String)body.get("passwd");
+            String jsonTxt = (String)body.get("jsontxt");
 
             if (host == null || dbName == null ||
                 userName == null || passwd == null) {
@@ -128,8 +134,12 @@ public class MySQLHttpFunction {
                     .body("The required parameters have not been specified").build();
             } 
 
+            boolean jsonFormat = false;
+            if (jsonTxt != null && jsonTxt.equals("true")) {
+                jsonFormat = true;
+            }
             StringBuilder str = new StringBuilder(processSQL(host,dbName,userName,
-                                                  passwd,context));
+                                                  passwd,jsonFormat,context));
 
             return request.createResponseBuilder(HttpStatus.OK).body(str.toString()).build();
         } catch(Exception e) {
@@ -144,6 +154,7 @@ public class MySQLHttpFunction {
                               final String dbName,
                               final String userName,
                               final String passwd,
+                              final boolean jsonFormat,
                               final ExecutionContext context) {
 
         StringBuilder str = new StringBuilder();
@@ -171,16 +182,25 @@ public class MySQLHttpFunction {
             String queryStr ="SELECT client_id, client_name, client_company FROM client_data";
 
             rs=sqlStatement.executeQuery(queryStr);
-            str.append("<p><br>Clients<br><ol>");
+            if (!jsonFormat) {
+                str.append("<p><br>Clients<br><ol>");
+            }
 
+            Map<String,ClientInfo> map = new LinkedHashMap<String,ClientInfo>();
             while (rs.next()) {
                 int clientId = rs.getInt("client_id");
                 String clientName = rs.getString("client_name");
                 String clientCompany = rs.getString("client_company");
-                str.append("<li>"+clientId+" "+clientName+" "+clientCompany+"</li>");
+                if (!jsonFormat) {
+                    str.append("<li>"+clientId+" "+clientName+" "+clientCompany+"</li>");
+                }
+                map.put(clientId+"-"+clientName,new ClientInfo(clientId,clientName,clientCompany));
             }    
-
-            str.append("</ol><br></p>");
+            if (!jsonFormat) {
+                str.append("</ol><br></p>");
+            } else {
+                str.append(new Gson().toJson(map));
+            }
             rs.close();
         } catch (SQLException e) {
             context.getLogger().severe("Database connection failed: "+e.toString());

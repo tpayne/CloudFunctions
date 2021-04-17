@@ -9,7 +9,8 @@ For passing security related information, it is best to use [`Authentication hea
 
 For getting return data, it is best to convert the information to JSON and then return a JSON string to the caller for processing into objects. More information can be found [here](https://www.javatpoint.com/convert-java-object-to-json#:~:text=These%20are%20the%20following%20steps%20to%20convert%20a,class%20to%20convert%20the%20Java%20object%20to%20JSON.).
 
-Implementation examples of these are however beyond the scope of these demos and are left to the reader to source.
+Implementation examples of these are however beyond the scope of these demos and are left to the reader to source. Although, one MySQL example
+has been extended to show how this can be done. See the Azure functions below.
 
 Status
 ------

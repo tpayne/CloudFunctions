@@ -226,6 +226,7 @@ public class MySQLHttpFunction {
      * 2. curl "{your host}/api/HttpMethod?name=HTTP%20Query"
      */
     @FunctionName("MySQLHttpFunction")
+    @SuppressWarnings ("unchecked") 
     public HttpResponseMessage run(
             @HttpTrigger(
                 name = "req",

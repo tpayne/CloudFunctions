@@ -71,3 +71,11 @@ Issues
 ------
 - On Mac Azure needs the JAVA_HOME faked when running functions locally
 - Object data is being returned as pseudo HTML constructed in the cloud functions. This is NOT the way to do it for real. You should convert the object data to JSON and then return this string to the calling client. However, this is beyond the scope of these demos. Although, I may add one to show how to do it in the future.
+
+Liability Warning
+-----------------
+The contents of this repository (documents and examples) are provided “as-is” with no warrantee implied 
+or otherwise about the accuracy or functionality of the examples.
+
+You use them at your own risk. If anything results to your machine or environment or anything else as a 
+result of ignoring this warning, then the fault is yours only and has nothing to do with me.

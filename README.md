@@ -7,10 +7,11 @@ For things like getting return data and passing security related information, th
 
 For passing security related information, it is best to use [`Authentication header`](https://en.wikipedia.org/wiki/Basic_access_authentication) and HTTPS. A example implementation can be found [here](https://stackoverflow.com/questions/3283234/http-basic-authentication-in-java-using-httpclient) and [here](https://www.digizol.com/2012/06/http-basic-authentication-java-decode.html).
 
-For getting return data, it is best to convert the information to JSON and then return a JSON string to the caller for processing into objects. More information can be found [here](https://www.javatpoint.com/convert-java-object-to-json#:~:text=These%20are%20the%20following%20steps%20to%20convert%20a,class%20to%20convert%20the%20Java%20object%20to%20JSON.).
+For getting return data, it is best to convert the information to JSON and then return a JSON string to the caller for processing into objects. More information on this can be found [here](https://www.javatpoint.com/convert-java-object-to-json#:~:text=These%20are%20the%20following%20steps%20to%20convert%20a,class%20to%20convert%20the%20Java%20object%20to%20JSON.).
 
-Implementation examples of these are however beyond the scope of these demos and are left to the reader to source. Although, one [MySQL](https://github.com/tpayne/CloudFunctions/tree/main/Azure/samples/MySQLFunction) example
-has been extended to show how this can be done. See the Azure functions below.
+Implementation examples of these are however beyond the scope of these demos and are left to the reader to source. Although, one [MySQL](https://github.com/tpayne/CloudFunctions/tree/main/Azure/samples/MySQLFunction) example has been extended to show how this can be done. See the Azure functions below.
+
+These examples assume you have a basic knowledge of what serverless cloud computing is and what cloud functions do. If not, then please see the notes below before trying these examples.
 
 Status
 ------

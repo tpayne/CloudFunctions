@@ -17,6 +17,7 @@ To run the sample, please do the following.
 
 First, we need to create the database. This is done using a shell script which will create and populate a Cloud
 Spanner database with data.
+
     % ./dbsetup.sh 
 
 Then run the cloud function.

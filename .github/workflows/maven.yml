@@ -21,5 +21,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Maven
-      run: (cd GCP/samples && mvn clean package clean) && (cd Azure/samples && mvn clean package clean)
+    - name: Build GCP sample
+      run: (cd GCP/samples && mvn clean package clean && mvn clean install -Psecurity-scans) 
+    - name: Build Azure sample
+      run: (cd Azure/samples && mvn clean package clean && mvn clean install -Psecurity-scans)

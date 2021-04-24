@@ -13,6 +13,9 @@ Implementation examples of these are however beyond the scope of these demos and
 
 These examples assume you have a basic knowledge of what serverless cloud computing is and what cloud functions do. If not, then please see the notes below before trying these examples.
 
+One of the GCP demos also includes instructions/demo on setting up API Gateway, so that the function is hosted behind
+a gateway.
+
 Status
 ------
 ````

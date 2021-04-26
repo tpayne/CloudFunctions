@@ -25,7 +25,6 @@ Build CI/Testing Status
 -----------------------
 The following indicates the CI and coverage status.
 
-[![Build Status](https://travis-ci.org/tpayne/CloudFunctions.svg?branch=main)](https://travis-ci.org/tpayne/CloudFunctions)
 [![Java CI with Maven](https://github.com/tpayne/CloudFunctions/actions/workflows/maven.yml/badge.svg)](https://github.com/tpayne/CloudFunctions/actions/workflows/maven.yml)
 
 Azure Cloud Function Examples

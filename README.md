@@ -42,6 +42,13 @@ GCP Cloud Function Examples
 ---------------------------
 The examples contained in this repo run on Maven and GCP. They are based in the following directories.
 
+Cloud Functions have the following: -
+* HTTP triggered
+* Pub/Sub triggered
+* Cloud Storage triggered
+
+The only ones provided in these samples are HTTP triggered.
+
 >| Project | Description | 
 >| ------- | ----------- |
 >| [samples/GCP/AdvancedHttpFunction/](https://github.com/tpayne/CloudFunctions/tree/main/GCP/samples/AdvancedHttpFunction) | This sample will use Maven to build advance HTTP functions |

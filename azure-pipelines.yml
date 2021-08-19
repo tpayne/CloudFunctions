@@ -23,3 +23,34 @@ steps:
     sonarQubeRunAnalysis: false
     checkStyleRunAnalysis: true
     pmdRunAnalysis: true
+
+# These tasks will copy any build artifacts to the staging directory
+- task: CopyFiles@2
+  inputs:
+    contents: 'Azure/**/target/*.zip'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+# These tasks will copy any build artifacts to the staging directory
+- task: CopyFiles@2
+  inputs:
+    contents: 'Azure/**/target/*.jar'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+# This task uploads the connects of the staging directory to ADO artifacts for downstream use
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: MyBuildOutputs
+    
+- task: Bash@3
+  target: host
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      echo "$(Build.ArtifactStagingDirectory)"
+      pwd
+      env
+      uname -a
+      ls -laR
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'

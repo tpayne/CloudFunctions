@@ -25,6 +25,7 @@ import java.io.BufferedWriter;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpClient.Version;
 import java.net.http.HttpResponse.BodyHandlers;
 
 import java.nio.charset.StandardCharsets;
@@ -41,7 +42,10 @@ public class SendHttpRequest implements HttpFunction {
 
   // Create a target to send the message to...
   private static HttpClient target =
-      HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(15)).build();
+      HttpClient.newBuilder()
+        .version(Version.HTTP_1_1)
+        .connectTimeout(Duration.ofSeconds(15))
+        .build();
 
   // This is the entry point for the function...
   @Override

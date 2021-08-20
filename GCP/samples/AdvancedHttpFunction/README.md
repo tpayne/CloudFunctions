@@ -84,3 +84,4 @@ You can clean the function up using...
 Notes
 -----
 * This sample uses plugins in the Maven file to ensure ALL referenced `.jar` dependencies are copied to the `target/` directory. This means that they are all loaded into the Cloud function deployment in GCP. This is needed otherwise you get missing dependency/class not found errors when the function is deployed to GCP
+* The REST API calls do not comply to normal standards as they are just for demo purposes. For more information, please see https://restfulapi.net/rest-api-design-tutorial-with-example/

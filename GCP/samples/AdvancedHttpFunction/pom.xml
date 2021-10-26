@@ -131,7 +131,7 @@
         -->
         <groupId>com.google.cloud.functions</groupId>
         <artifactId>function-maven-plugin</artifactId>
-        <version>0.9.6</version>
+        <version>0.9.8</version>
         <configuration>
           <functionTarget>samples.gcp.functions.HttpMethod</functionTarget>
         </configuration>

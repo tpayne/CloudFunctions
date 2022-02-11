@@ -27,12 +27,6 @@ The following indicates the CI and coverage status.
 
 [![Java CI with Maven](https://github.com/tpayne/CloudFunctions/actions/workflows/maven.yml/badge.svg)](https://github.com/tpayne/CloudFunctions/actions/workflows/maven.yml)
 
-Introduction to Cloud Functions
--------------------------------
-The following is a training video I put together for Cloud Functions...
-
-[![Intro into IaC](https://img.youtube.com/vi/gzsy1SNOOlY/0.jpg)](https://www.youtube.com/watch?v=gzsy1SNOOlY)
-
 Azure Cloud Function Examples
 -----------------------------
 The examples contained in this repo run on Maven and Azure. They are based in the following directories.

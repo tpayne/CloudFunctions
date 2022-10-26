@@ -13,30 +13,30 @@ Running Sample
 --------------
 To run the sample, please do the following...
 
-    % mvn clean function:run -Drun.functionTarget=samples.gcp.functions.HttpMethod
+    mvn clean function:run -Drun.functionTarget=samples.gcp.functions.HttpMethod
 
 Then in another console window, do...
 
-    % curl "http://localhost:8080/?username=testuserfred&userpriv=normal-user"
+    curl "http://localhost:8080/?username=testuserfred&userpriv=normal-user"
     <p>This is a GET funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal-user' <br></p>
-    % curl -X POST -d key1=value1 -d key2=value2 localhost:8080
+    curl -X POST -d key1=value1 -d key2=value2 localhost:8080
     <p>This is a POST function call<br><ul><li>Field: 'key1' -> Value: 'value1'</li><li>Field: 'key2' -> Value: 'value2'</li></ul><br></p>
-    % curl -H "Content-Type: application/json" \
+    curl -H "Content-Type: application/json" \
         --request POST \
         --data '{"username":"testuserfred","userpriv":"delta-system"}' localhost:8080
     <p>This is a POST funtion call<br>User name is 'testuserfred' <br>User privelege is 'delta-system' <br></p>
 
 Other functions, like a PUT will be rejected.
 
-    % curl -X PUT localhost:8080
+    curl -X PUT localhost:8080
     <p>This call is not supported<br></p>
 
 Deploying the Function to GCP
 -----------------------------
 If you wish to deploy the function to GCP, you can use the following...
 
-    % mvn clean package
-    % gcloud functions deploy advancedhttpfunction \
+    mvn clean package
+    gcloud functions deploy advancedhttpfunction \
         --entry-point=samples.gcp.functions.HttpMethod \
         --runtime=java11 \
         --trigger-http \
@@ -60,15 +60,15 @@ If you wish to deploy the function to GCP, you can use the following...
 
 If any errors occur during deployment, then you can debug them with...
 
-    % gcloud functions logs read
+    gcloud functions logs read
 
 You can then invoke it via...
 
-    % curl "https://us-central1-investdemo-300915.cloudfunctions.net/advancedhttpfunction/?username=testuserfred&userpriv=normal"
+    curl "https://us-central1-investdemo-300915.cloudfunctions.net/advancedhttpfunction/?username=testuserfred&userpriv=normal"
     <p>This is a GET funtion call<br>User name is 'testuserfred' <br>User privelege is 'normal' <br></p>
-    % curl -X POST -d key1=value1 -d key2=value2 https://us-central1-investdemo-300915.cloudfunctions.net/advancedhttpfunction/
+    curl -X POST -d key1=value1 -d key2=value2 https://us-central1-investdemo-300915.cloudfunctions.net/advancedhttpfunction/
     <p>This is a POST function call<br><ul><li>Field: 'key1' -> Value: 'value1'</li><li>Field: 'key2' -> Value: 'value2'</li></ul><br></p>
-    % curl -H "Content-Type: application/json" \
+    curl -H "Content-Type: application/json" \
         --request POST \
         --data '{"username":"testuserfred","userpriv":"delta-system"}' \
         https://us-central1-investdemo-300915.cloudfunctions.net/advancedhttpfunction/
@@ -78,8 +78,8 @@ Cleaning Up
 -----------
 You can clean the function up using...
 
-    % mvn clean
-    % gcloud functions delete advancedhttpfunction
+    mvn clean
+    gcloud functions delete advancedhttpfunction
 
 Notes
 -----

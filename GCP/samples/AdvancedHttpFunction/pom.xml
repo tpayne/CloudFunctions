@@ -48,7 +48,7 @@
     <dependency>
       <groupId>com.google.cloud.functions</groupId>
       <artifactId>function-maven-plugin</artifactId>
-      <version>0.9.8</version>
+      <version>0.10.1</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -131,7 +131,7 @@
         -->
         <groupId>com.google.cloud.functions</groupId>
         <artifactId>function-maven-plugin</artifactId>
-        <version>0.9.8</version>
+        <version>0.10.1</version>
         <configuration>
           <functionTarget>samples.gcp.functions.HttpMethod</functionTarget>
         </configuration>

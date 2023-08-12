@@ -1,7 +1,7 @@
 variable "app_name" {
   type        = string
   description = "The name of the application"
-  default     = "httpGitHub"
+  default     = "testapp"
 }
 
 variable "image_name" {
@@ -17,4 +17,6 @@ variable "image_name" {
     tag        = "main"
     image_repo = "https://ghcr.io/tpayne"
   }
+
+  nullable = false
 }

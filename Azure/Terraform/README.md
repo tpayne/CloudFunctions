@@ -34,7 +34,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app_name"></a> [app\_name](#input\_app\_name) | The name of the application | `string` | `"httpGitHub"` | no |
+| <a name="input_app_name"></a> [app\_name](#input\_app\_name) | The name of the application | `string` | `"testapp"` | no |
 | <a name="input_image_name"></a> [image\_name](#input\_image\_name) | The details of the functions image | <pre>object({<br>    name       = string<br>    tag        = string<br>    image_repo = string<br>  })</pre> | <pre>{<br>  "image_repo": "https://ghcr.io/tpayne",<br>  "name": "azfuncnodejs",<br>  "tag": "main"<br>}</pre> | no |
 
 ## Outputs

@@ -58,4 +58,4 @@ The following are useful references when developing functions
 * https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/develop-serverless-apps?tabs=v3-js
 * https://learn.microsoft.com/en-us/samples/browse/?products=azure-functions&languages=python
 * https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools%2Cacr%2Cazure-cli&pivots=azure-functions
-* 
+

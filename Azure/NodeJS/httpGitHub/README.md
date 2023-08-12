@@ -41,3 +41,21 @@ To deploy the sample to Azure, you have various options
 * Use Azure CLI
 
 This repo provides a sample Terraform module for deploying the app along with other required resources. This can be found in the `Terraform/` directory.
+
+## Notes
+The following are useful references when developing functions
+
+* https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?tabs=javascript%2Cwindows%2Cazure-cli&pivots=nodejs-model-v3
+* https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?source=recommendations&tabs=javascript%2Cwindows%2Cazure-cli&pivots=nodejs-model-v3
+* https://learn.microsoft.com/en-us/training/modules/create-serverless-logic-with-azure-functions/1-introduction
+* https://github.com/Azure/azure-functions-core-tools/issues/3275
+* https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools%2Cacr%2Cazure-cli&pivots=azure-functions#create-supporting-azure-resources-for-your-function
+* https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Cportal%2Cv2%2Cbash&pivots=programming-language-csharp
+* https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=python-v2%2Cin-process%2Cfunctionsv2&pivots=programming-language-javascript
+* https://github.com/yvele/azure-function-express
+* https://learn.microsoft.com/en-us/samples/azure-samples/js-e2e-azure-function-graphql-hello/graphql-typescript-hello-world/
+* https://learn.microsoft.com/en-us/samples/browse/?languages=javascript%2Cnodejs&products=azure-functions
+* https://learn.microsoft.com/en-us/azure/developer/javascript/how-to/develop-serverless-apps?tabs=v3-js
+* https://learn.microsoft.com/en-us/samples/browse/?products=azure-functions&languages=python
+* https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-custom-container?tabs=core-tools%2Cacr%2Cazure-cli&pivots=azure-functions
+* 

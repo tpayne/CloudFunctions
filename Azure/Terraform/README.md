@@ -5,17 +5,21 @@ This Terraform module is used to deploy Azure Function Container apps (with supp
 It is used by the samples provided in the above directories.
 
 <!-- BEGIN_TF_DOCS -->
+This module is used to install function apps into Azure
+based on containers
+
 ## Requirements
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.14.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 2.26 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 2.26 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.69.0 |
 
 ## Modules
 
@@ -35,6 +39,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_name"></a> [app\_name](#input\_app\_name) | The name of the application | `string` | `"testapp"` | no |
+| <a name="input_health_probe"></a> [health\_probe](#input\_health\_probe) | Health probe path | `string` | `"/api/version"` | no |
 | <a name="input_image_name"></a> [image\_name](#input\_image\_name) | The details of the functions image | <pre>object({<br>    name       = string<br>    tag        = string<br>    image_repo = string<br>  })</pre> | <pre>{<br>  "image_repo": "https://ghcr.io/tpayne",<br>  "name": "azfuncnodejs",<br>  "tag": "main"<br>}</pre> | no |
 
 ## Outputs
@@ -43,4 +48,3 @@ No modules.
 |------|-------------|
 | <a name="output_app-url"></a> [app-url](#output\_app-url) | The URL that the Azure function gets deployed to |
 <!-- END_TF_DOCS -->
-

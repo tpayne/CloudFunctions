@@ -41,6 +41,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_app-url"></a> [app-url](#output\_app-url) | n/a |
+| <a name="output_app-url"></a> [app-url](#output\_app-url) | The URL that the Azure function gets deployed to |
 <!-- END_TF_DOCS -->
 

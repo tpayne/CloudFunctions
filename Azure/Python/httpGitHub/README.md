@@ -26,7 +26,7 @@ docker run --rm -t -p 3000:80 -t azfuncpytest:v1
 
 Once the Docker image is running, you can invoke the functions provided by it using commands.
 
-The `api/repo/list?username=<username>` will dump all the repos owned by a user (public).
+The `api/repo/list?username=<username>` will dump all the repos owned by a user (public) using the GitHub API.
 
 ```console
 curl http://localhost:3000/api/repo/list?username=tpayne

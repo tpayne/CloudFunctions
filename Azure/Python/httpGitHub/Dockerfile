@@ -7,7 +7,7 @@ ARG SITE_HOME=/home/site/wwwroot
 ENV AzureWebJobsScriptRoot=${SITE_HOME} \
     AzureFunctionsJobHost__Logging__Console__IsEnabled=true \
     AzureWebJobsFeatureFlags=EnableWorkerIndexing \
-    AzureWebJobsStorage=UseDevelopmentStorage=true
+    AzureWebJobsStorage=false
 
 COPY requirements.txt /
 

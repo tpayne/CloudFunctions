@@ -39,15 +39,20 @@ def httpGitHub(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse("Error: Username not specified", status_code=400)
     else:
         try:
-            gitHubUrl = "https://api.github.com/users/" + userName + "/repos?visibility=public"
+            gitHubUrl = "https://api.github.com/users/" + userName + "/repos" 
+            if not auth_token:
+                gitHubUrl += "?visibility=public"
+            else:
+                gitHubUrl += "?visibility=private"
+
             logging.info("Running request on "+gitHubUrl)
             if auth_token:
-                headers = {'Authorization': f'Bearer {auth_token}'}
+                headers = {'Authorization': f'{auth_token}'}
                 r = requests.get(url=gitHubUrl,headers=headers)
             else:
                 r = requests.get(url=gitHubUrl)
             data = r.json()
-            strData = json.dumps(data)
+            strData = json.dumps(data,indent=2)
             return func.HttpResponse(strData, status_code=200)
         except Exception as e:
             logging.error(traceback.format_exc())

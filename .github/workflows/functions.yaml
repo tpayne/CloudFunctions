@@ -64,3 +64,20 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Extract NodeJs Function Docker metadata
+        id: meta1
+        uses: docker/metadata-action@818d4b7b91585d195f67373fd9cb0332e31a7175
+        with:
+          images: ${{ env.REGISTRY }}/${{ github.actor }}/azfuncnodejs
+
+      # Build and push Docker image with Buildx (don't push on PR)
+      # https://github.com/docker/build-push-action
+      - name: Build and Push Function NodeJS Docker image
+        id: build-and-push1
+        uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825
+        with:
+          context: Azure/NodeJS/httpGitHub/
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta1.outputs.tags }}
+          labels: ${{ steps.meta1.outputs.labels }}

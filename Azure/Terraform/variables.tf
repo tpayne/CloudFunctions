@@ -20,3 +20,9 @@ variable "image_name" {
 
   nullable = false
 }
+
+variable "health_probe" {
+  type        = string
+  description = "Health probe path"
+  default     = "/api/version"
+}

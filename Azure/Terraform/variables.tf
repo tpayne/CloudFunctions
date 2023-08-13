@@ -12,7 +12,7 @@ variable "image_name" {
     health_probe = string
   }))
 
-  description = "The details of the functions image"
+  description = "The details of the functions to deploy"
   default = [
     {
       name         = "azfuncnodejs"

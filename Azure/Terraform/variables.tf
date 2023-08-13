@@ -9,7 +9,8 @@ variable "image_name" {
     name         = string
     tag          = string
     image_repo   = string
-    health_probe = string
+    health_probe = optional(string)
+    permenant    = optional(bool,true)
   }))
 
   description = "The details of the functions to deploy"
@@ -27,6 +28,4 @@ variable "image_name" {
       health_probe = "/api/version"
     }
   ]
-
-  nullable = false
 }

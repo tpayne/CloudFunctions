@@ -43,7 +43,7 @@ resource "azurerm_linux_function_app" "funcApp" {
   }
 
   site_config {
-    always_on         = true
+    always_on         = each.value.permenant
     health_check_path = each.value.health_probe
     application_stack {
       docker {

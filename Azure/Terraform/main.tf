@@ -5,7 +5,7 @@
 
 resource "azurerm_resource_group" "rg_name" {
   name     = "${var.app_name}-rsg"
-  location = "West Europe"
+  location = var.location
 }
 
 resource "azurerm_storage_account" "storage" {

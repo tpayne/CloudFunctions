@@ -4,13 +4,19 @@ variable "app_name" {
   default     = "testapp"
 }
 
+variable "location" {
+  type        = string
+  description = "The location of the application"
+  default     = "West Europe"
+}
+
 variable "image_details" {
   type = list(object({
     name         = string
     tag          = string
     image_repo   = string
     health_probe = optional(string)
-    permenant    = optional(bool,true)
+    permenant    = optional(bool, true)
   }))
 
   description = "The details of the functions to deploy"

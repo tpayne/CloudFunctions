@@ -25,7 +25,8 @@ resource "azurerm_service_plan" "plan" {
 }
 
 resource "azurerm_linux_function_app" "funcApp" {
-  name                 = "${var.app_name}-func"
+  for_each             = { for i, v in var.image_name : i => v if length(v.name) > 0 }
+  name                 = "${var.app_name}-func-${each.value.name}"
   location             = azurerm_resource_group.rg_name.location
   resource_group_name  = azurerm_resource_group.rg_name.name
   storage_account_name = azurerm_storage_account.storage.name
@@ -43,12 +44,12 @@ resource "azurerm_linux_function_app" "funcApp" {
 
   site_config {
     always_on         = true
-    health_check_path = var.health_probe
+    health_check_path = each.value.health_probe
     application_stack {
       docker {
-        registry_url = var.image_name.image_repo
-        image_name   = var.image_name.name
-        image_tag    = var.image_name.tag
+        registry_url = each.value.image_repo
+        image_name   = each.value.name
+        image_tag    = each.value.tag
       }
     }
   }

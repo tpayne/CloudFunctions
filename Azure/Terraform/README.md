@@ -39,12 +39,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_name"></a> [app\_name](#input\_app\_name) | The name of the application | `string` | `"testapp"` | no |
-| <a name="input_health_probe"></a> [health\_probe](#input\_health\_probe) | Health probe path | `string` | `"/api/version"` | no |
-| <a name="input_image_name"></a> [image\_name](#input\_image\_name) | The details of the functions image | <pre>object({<br>    name       = string<br>    tag        = string<br>    image_repo = string<br>  })</pre> | <pre>{<br>  "image_repo": "https://ghcr.io/tpayne",<br>  "name": "azfuncnodejs",<br>  "tag": "main"<br>}</pre> | no |
+| <a name="input_image_name"></a> [image\_name](#input\_image\_name) | The details of the functions image | <pre>list(object({<br>    name       = string<br>    tag        = string<br>    image_repo = string<br>    health_probe = string<br>  }))</pre> | <pre>[<br>  {<br>    "health_probe": "/api/version",<br>    "image_repo": "https://ghcr.io/tpayne",<br>    "name": "azfuncnodejs",<br>    "tag": "main"<br>  },<br>  {<br>    "health_probe": "/api/version",<br>    "image_repo": "https://ghcr.io/tpayne",<br>    "name": "azfuncpython",<br>    "tag": "main"<br>  }<br>]</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_app-url"></a> [app-url](#output\_app-url) | The URL that the Azure function gets deployed to |
+| <a name="output_app-url"></a> [app-url](#output\_app-url) | The URL(s) that the Azure function gets deployed to |
 <!-- END_TF_DOCS -->

@@ -25,7 +25,7 @@ resource "azurerm_service_plan" "plan" {
 }
 
 resource "azurerm_linux_function_app" "funcApp" {
-  for_each             = { for i, v in var.image_name : i => v if length(v.name) > 0 }
+  for_each             = { for i, v in var.image_details : i => v if length(v.name) > 0 }
   name                 = "${var.app_name}-func-${each.value.name}"
   location             = azurerm_resource_group.rg_name.location
   resource_group_name  = azurerm_resource_group.rg_name.name

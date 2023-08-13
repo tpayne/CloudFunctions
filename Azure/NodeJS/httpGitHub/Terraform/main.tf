@@ -1,7 +1,7 @@
 module "github" {
   source   = "../../../Terraform/"
   app_name = "githubazfuncnodejs"
-  image_name = [{
+  image_details = [{
     name         = "azfuncnodejs"
     tag          = "main"
     image_repo   = "https://ghcr.io/tpayne"

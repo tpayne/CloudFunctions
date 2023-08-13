@@ -1,7 +1,7 @@
 module "github" {
   source   = "../../../Terraform/"
   app_name = "githubazfuncpythonjs"
-  image_name = [{
+  image_details = [{
     name         = "azfuncpython"
     tag          = "main"
     image_repo   = "https://ghcr.io/tpayne"

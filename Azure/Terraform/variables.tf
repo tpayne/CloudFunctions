@@ -4,7 +4,7 @@ variable "app_name" {
   default     = "testapp"
 }
 
-variable "image_name" {
+variable "image_details" {
   type = list(object({
     name         = string
     tag          = string

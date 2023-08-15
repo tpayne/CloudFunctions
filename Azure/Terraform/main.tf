@@ -25,7 +25,7 @@ resource "azurerm_service_plan" "plan" {
 }
 
 resource "azurerm_linux_function_app" "funcApp" {
-  for_each             = { for i, v in var.image_details : i => v if length(v.name) > 0 }
+  for_each             = { for i, v in var.func_settings : i => v if length(v.name) > 0 }
   name                 = "${var.app_name}-func-${each.value.name}"
   location             = azurerm_resource_group.rg_name.location
   resource_group_name  = azurerm_resource_group.rg_name.name
@@ -38,17 +38,22 @@ resource "azurerm_linux_function_app" "funcApp" {
     WEBSITE_CONTENTAZUREFILECONNECTIONSTRING = azurerm_storage_account.storage.primary_connection_string
     WEBSITE_CONTENTSHARE                     = azurerm_storage_account.storage.name
     },
-    each.value.app_settings,
-  local.app-settings)
+  each.value.app_settings, local.app-settings)
 
   site_config {
     always_on         = each.value.permenant
     health_check_path = each.value.health_probe
     application_stack {
-      docker {
-        registry_url = each.value.image_repo
-        image_name   = each.value.name
-        image_tag    = each.value.tag
+      java_version   = each.value.java_version
+      node_version   = each.value.node_version
+      python_version = each.value.python_version
+      dynamic "docker" {
+        for_each = each.value.docker == null ? [] : [1]
+        content {
+          image_name   = each.value.docker.image_name
+          image_tag    = each.value.docker.image_tag
+          registry_url = each.value.docker.registry_url
+        }
       }
     }
   }

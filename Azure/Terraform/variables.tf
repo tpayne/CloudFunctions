@@ -10,11 +10,17 @@ variable "location" {
   default     = "West Europe"
 }
 
-variable "image_details" {
+variable "func_settings" {
   type = list(object({
-    name         = string
-    tag          = string
-    image_repo   = string
+    name           = string
+    java_version   = optional(string)
+    node_version   = optional(string)
+    python_version = optional(string)
+    docker = optional(object({
+      registry_url = string
+      image_name   = string
+      image_tag    = string
+    }))
     health_probe = optional(string)
     permenant    = optional(bool, true)
     app_settings = optional(map(string))
@@ -23,16 +29,30 @@ variable "image_details" {
   description = "The details of the functions to deploy"
   default = [
     {
-      name         = "azfuncnodejs"
-      tag          = "main"
-      image_repo   = "https://ghcr.io/tpayne"
+      name = "azfuncnodejs"
+      docker = {
+        image_name   = "azfuncnodejs"
+        image_tag    = "main"
+        registry_url = "https://ghcr.io/tpayne"
+      }
       health_probe = "/api/version"
     },
     {
-      name         = "azfuncpython"
-      tag          = "main"
-      image_repo   = "https://ghcr.io/tpayne"
+      name = "azfuncpython"
+      docker = {
+        image_name   = "azfuncpython"
+        image_tag    = "main"
+        registry_url = "https://ghcr.io/tpayne"
+      }
       health_probe = "/api/version"
+    },
+    {
+      name         = "java"
+      java_version = "17"
+    },
+    {
+      name           = "python"
+      python_version = "3.10"
     }
   ]
 }

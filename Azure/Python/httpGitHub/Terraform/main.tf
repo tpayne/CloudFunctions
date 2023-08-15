@@ -1,10 +1,13 @@
 module "github" {
   source   = "../../../Terraform/"
   app_name = "githubazfuncpythonjs"
-  image_details = [{
-    name         = "azfuncpython"
-    tag          = "main"
-    image_repo   = "https://ghcr.io/tpayne"
+  func_settings = [{
+    name = "azfuncpython"
+    docker = {
+      image_name   = "azfuncpython"
+      image_tag    = "main"
+      registry_url = "https://ghcr.io/tpayne"
+    }
     health_probe = "/api/version"
   }]
 }

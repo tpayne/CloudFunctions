@@ -34,13 +34,12 @@ resource "azurerm_linux_function_app" "funcApp" {
   storage_account_access_key = azurerm_storage_account.storage.primary_access_key
   service_plan_id            = azurerm_service_plan.plan.id
 
-  app_settings = {
-    FUNCTION_APP_EDIT_MODE                   = "readOnly"
-    https_only                               = false
-    WEBSITES_ENABLE_APP_SERVICE_STORAGE      = false
+  app_settings = merge({
     WEBSITE_CONTENTAZUREFILECONNECTIONSTRING = azurerm_storage_account.storage.primary_connection_string
     WEBSITE_CONTENTSHARE                     = azurerm_storage_account.storage.name
-  }
+    },
+    each.value.app_settings,
+  local.app-settings)
 
   site_config {
     always_on         = each.value.permenant

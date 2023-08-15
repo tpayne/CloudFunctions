@@ -17,6 +17,7 @@ variable "image_details" {
     image_repo   = string
     health_probe = optional(string)
     permenant    = optional(bool, true)
+    app_settings = optional(map(string))
   }))
 
   description = "The details of the functions to deploy"

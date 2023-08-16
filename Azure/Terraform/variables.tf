@@ -11,8 +11,7 @@ variable "location" {
 }
 
 variable "func_settings" {
-  type = list(object({
-    name           = string
+  type = map(object({
     java_version   = optional(string)
     node_version   = optional(string)
     python_version = optional(string)
@@ -27,9 +26,8 @@ variable "func_settings" {
   }))
 
   description = "The details of the functions to deploy"
-  default = [
-    {
-      name = "azfuncnodejs"
+  default = {
+    "azfuncnodejs" = {
       docker = {
         image_name   = "azfuncnodejs"
         image_tag    = "main"
@@ -37,8 +35,7 @@ variable "func_settings" {
       }
       health_probe = "/api/version"
     },
-    {
-      name = "azfuncpython"
+    "azfuncpython" = {
       docker = {
         image_name   = "azfuncpython"
         image_tag    = "main"
@@ -46,13 +43,11 @@ variable "func_settings" {
       }
       health_probe = "/api/version"
     },
-    {
-      name         = "java"
+    "java" = {
       java_version = "17"
     },
-    {
-      name           = "python"
+    "python" = {
       python_version = "3.10"
     }
-  ]
+  }
 }

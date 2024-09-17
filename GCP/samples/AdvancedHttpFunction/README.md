@@ -58,6 +58,12 @@ If you wish to deploy the function to GCP, you can use the following...
     updateTime: '2021-04-08T17:43:03.855Z'
     versionId: '4'
 
+If the role requires a binding role, then
+
+    gcloud functions add-iam-policy-binding advancedhttpfunction \
+        --region=us-central1 --member=allUsers \
+        --role=roles/cloudfunctions.invoker
+
 If any errors occur during deployment, then you can debug them with...
 
     gcloud functions logs read

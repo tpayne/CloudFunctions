@@ -19,8 +19,8 @@ To run the sample, please do the following...
 
 Then in another console window, do...
 
-    % curl "http://localhost:7071/api/SendHttpRequest/?targetURL=http://www.yahoo.com"
-    <p>This is a GET/POST funtion call<br><br>Received code '400' from url 'http://www.yahoo.com'</p>
+    % curl "http://localhost:7071/api/SendHttpRequest/?targetURL=https://www.yahoo.com"
+    <p>This is a GET/POST funtion call<br><br>Received code '400' from url 'https://www.yahoo.com'</p>
     % curl -X POST -d targetURL=https://www.google.com http://localhost:7071/api/SendHttpRequest
     <p>This is a GET/POST funtion call<br><br>Received code '200' from url 'https://www.google.com'</p>
 
@@ -34,8 +34,8 @@ If you wish to deploy the function to Azure, you can use the following...
         
 You can then invoke it via...
 
-    % curl "https://sendhttprequest-20210414130559868.azurewebsites.net/api/sendhttprequest/?targetURL=http://www.yahoo.com"
-    <p>This is a GET/POST funtion call<br><br>Received code '400' from url 'http://www.yahoo.com'</p>
+    % curl "https://sendhttprequest-20210414130559868.azurewebsites.net/api/sendhttprequest/?targetURL=https://www.yahoo.com"
+    <p>This is a GET/POST funtion call<br><br>Received code '400' from url 'https://www.yahoo.com'</p>
     % curl -X POST -d targetURL=https://www.google.com \
         https://sendhttprequest-20210414130559868.azurewebsites.net/api/sendhttprequest/
     <p>This is a GET/POST funtion call<br><br>Received code '200' from url 'https://www.google.com'</p>

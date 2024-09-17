@@ -32,6 +32,8 @@ import java.io.BufferedWriter;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 
 import java.nio.charset.StandardCharsets;
@@ -114,9 +116,9 @@ public class Function {
                   .body("The required parameters have not been specified").build();
       } 
 
-      String url = (targetURL.length()==0) ? "http://www.yahoo.com" : targetURL.toString();
-      var getRequest = java.net.http.HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
-      var getResponse = target.send(getRequest, BodyHandlers.ofString());
+      String url = (targetURL.length()==0) ? "https://www.yahoo.com" : targetURL.toString();
+      HttpRequest getRequest = java.net.http.HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
+      HttpResponse<String> getResponse = target.send(getRequest, BodyHandlers.ofString());
       str.append("<br>Received code '"+getResponse.statusCode()+"' from url '"+url+"'</p>");
       targetURL = null;
       context.getLogger().info(str.toString());

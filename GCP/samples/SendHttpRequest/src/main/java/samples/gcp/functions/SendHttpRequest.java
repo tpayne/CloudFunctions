@@ -90,9 +90,9 @@ public class SendHttpRequest implements HttpFunction {
       }
 
       if (doCall) {
-        String url = (targetURL.length()==0) ? "http://www.yahoo.com" : targetURL.toString();
-        var getRequest = java.net.http.HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
-        var getResponse = target.send(getRequest, BodyHandlers.ofString());
+        String url = (targetURL.length()==0) ? "https://www.yahoo.com" : targetURL.toString();
+        java.net.http.HttpRequest getRequest = java.net.http.HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
+        java.net.http.HttpResponse<String> getResponse = target.send(getRequest, BodyHandlers.ofString());
         str.append("<br>Received code '"+getResponse.statusCode()+"' from url '"+url+"'</p>");
       }
     } catch(Exception e) {

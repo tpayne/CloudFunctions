@@ -107,10 +107,10 @@ public class SendHttpRequestTest {
     when(request.getMethod()).thenReturn("POST");
     when(request.getParts()).thenReturn(Map.of());
 
-    Map<String, List<String>> queryParams = Map.of("targetURL", List.of("http://www.yahoo.com"));
+    Map<String, List<String>> queryParams = Map.of("targetURL", List.of("https://www.yahoo.com"));
 
     when(request.getQueryParameters()).thenReturn(queryParams);
-    when(request.getFirstQueryParameter("targetURL")).thenReturn(Optional.of("http://www.yahoo.com"));
+    when(request.getFirstQueryParameter("targetURL")).thenReturn(Optional.of("https://www.yahoo.com"));
 
     new SendHttpRequest().service(request, response);
 

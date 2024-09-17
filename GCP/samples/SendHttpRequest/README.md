@@ -20,7 +20,7 @@ To run the sample, please do the following...
 Then in another console window, do...
 
     % curl "http://localhost:8080/"
-    <p>This is a GET function call<br><br>Received code '400' from url 'http://www.yahoo.com'</p>
+    <p>This is a GET function call<br><br>Received code '400' from url 'https://www.yahoo.com'</p>
     % curl -X POST -d targetURL=https://www.google.com localhost:8080
     <p>This is a POST function call<br><li>Field: 'targetURL' -> Value: 'https://www.google.com'</li></ul><br></p><br>Received code '200' from url 'https://www.google.com'</p>
 
@@ -69,7 +69,7 @@ If any errors occur during deployment, then you can debug them with...
 You can then invoke it via...
 
     % curl "https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest"
-    <p>This is a GET function call<br><br>Received code '400' from url 'http://www.yahoo.com'</p>
+    <p>This is a GET function call<br><br>Received code '400' from url 'https://www.yahoo.com'</p>
     % curl -X POST -d targetURL=https://www.google.com https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest
     <p>This is a POST function call<br><li>Field: 'targetURL' -> Value: 'https://www.google.com'</li></ul><br></p><br>Received code '200' from url 'https://www.google.com'</p>
 
@@ -147,7 +147,7 @@ Testing the call
     % curl -X POST -d targetURL=https://www.google.com https://httpgateway-1meitjlb.uc.gateway.dev/sendhttprequestpost/ 
     <p>This is a POST function call<br><li>Field: 'targetURL' -> Value: 'https://www.google.com'</li></ul><br></p><br>Received code '200' from url 'https://www.google.com'</p>
     % curl https://httpgateway-1meitjlb.uc.gateway.dev/sendhttprequestget/
-    <p>This is a GET function call<br><br>Received code '400' from url 'http://www.yahoo.com'</p
+    <p>This is a GET function call<br><br>Received code '400' from url 'https://www.yahoo.com'</p
 
 Cleaning Up
 -----------

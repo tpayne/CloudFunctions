@@ -22,7 +22,9 @@ Spanner database with data.
 
 Then run the cloud function.
 
-    % mvn clean function:run -Drun.functionTarget=samples.gcp.functions.CloudSpannerHttp
+    % gcloud services enable spanner.googleapis.com
+    % mvn clean function:run \
+        -Drun.functionTarget=samples.gcp.functions.CloudSpannerHttp
 
 Then in another console window, do...
 
@@ -46,33 +48,22 @@ Deploying the Function to GCP
 If you wish to deploy the function to GCP, you can use the following...
 
     % mvn clean package
+    % gcloud config set functions/region us-central1
     % gcloud functions deploy cloudspanner \
         --entry-point=samples.gcp.functions.CloudSpannerHttp \
         --runtime=java11 \
         --trigger-http \
-        --source=target 
-    Deploying function (may take a while - up to 2 minutes)...done.                                                
-    availableMemoryMb: 256
-    buildId: 34f79f46-9d00-4c2c-9ebc-77640d0c3a84
-    entryPoint: samples.gcp.functions.CloudSpannerHttp
-    httpsTrigger:
-      securityLevel: SECURE_OPTIONAL
-      url: https://us-central1-investdemo-300915.cloudfunctions.net/cloudspanner
-    ingressSettings: ALLOW_ALL
-    labels:
-      deployment-tool: cli-gcloud
-    name: projects/investdemo-300915/locations/us-central1/functions/cloudspanner
-    runtime: java11
-    status: ACTIVE
-    timeout: 60s
-    updateTime: '2021-04-09T12:38:46.416Z'
-    versionId: '1'
+        --source=target \
+        --allow-unauthenticated \
+        --gen2 
+    
+We are using `--gen2` due to sizing policy issues
 
 If the role requires a binding role, then
 
-    gcloud functions add-iam-policy-binding cloudspanner \
-        --region=us-central1 --member=allUsers \
-        --role=roles/cloudfunctions.invoker
+    gcloud functions add-invoker-policy-binding \
+        cloudspanner \
+        --region=us-central1 --member=allUsers
 
 If any errors occur during deployment, then you can debug them with...
 
@@ -80,7 +71,8 @@ If any errors occur during deployment, then you can debug them with...
     
 You can then invoke it via...
 
-    % curl "https://us-central1-investdemo-300915.cloudfunctions.net/cloudspanner/?instanceName=testdb&dbName=testdb" \
+    % curl \
+        "https://us-central1-investdemo-300915.cloudfunctions.net/cloudspanner/?instanceName=testdb&dbName=testdb" \
             -H "Authorization: bearer $(gcloud auth print-identity-token)"
     <p>This is a GET function call<br><ul><li>Instance = 'testdb' </li><li>Database = 'testdb' </li></ul><br></p><br>Clients:
 

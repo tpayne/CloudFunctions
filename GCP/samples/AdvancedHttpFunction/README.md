@@ -63,10 +63,13 @@ If the role requires a binding role, then
     gcloud functions add-iam-policy-binding advancedhttpfunction \
         --region=us-central1 --member=allUsers \
         --role=roles/cloudfunctions.invoker
+    # The following command just shows the IAM policies assigned
+    gcloud functions get-iam-policy advancedhttpfunction
 
 If any errors occur during deployment, then you can debug them with...
 
     gcloud functions logs read
+    gcloud functions describe advancedhttpfunction
 
 You can then invoke it via...
 

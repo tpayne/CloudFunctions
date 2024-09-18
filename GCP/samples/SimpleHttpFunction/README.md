@@ -15,7 +15,8 @@ Running Sample
 --------------
 To run the sample, please do the following...
 
-    % mvn clean function:run -Drun.functionTarget=samples.gcp.functions.HttpMethod
+    % mvn clean function:run \
+        -Drun.functionTarget=samples.gcp.functions.HttpMethod
 
 Then in another console window, do...
 
@@ -40,7 +41,8 @@ If you wish to deploy the function to GCP, you can use the following...
         --entry-point=samples.gcp.functions.HttpMethod \
         --runtime=java11 \
         --trigger-http \
-        --source=target
+        --source=target \
+        --allow-unauthenticated 
     Deploying function (may take a while - up to 2 minutes)...done.                                              
     availableMemoryMb: 256
     buildId: 12f816ee-8eac-4201-9d0d-c085b224ef3d

@@ -71,7 +71,7 @@ If any errors occur during deployment, then you can debug them with...
 You can then invoke it via...
 
     % curl "https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest"
-    <p>This is a GET function call<br><br>Received code '400' from url 'https://www.yahoo.com'</p>
+    <p>This is a GET function call<br><br>Received code '200' from url 'https://www.yahoo.com'</p>
     % curl -X POST -d targetURL=https://www.google.com https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest
     <p>This is a POST function call<br><li>Field: 'targetURL' -> Value: 'https://www.google.com'</li></ul><br></p><br>Received code '200' from url 'https://www.google.com'</p>
 
@@ -81,35 +81,32 @@ If you want to put the function behind an API gateway, then please do the follow
 
 Enable the API gateway services (if needed)
 
-    % gcloud services enable apigateway.googleapis.com
-    % gcloud services enable servicemanagement.googleapis.com
-    % gcloud services enable servicecontrol.googleapis.com
-    % gcloud services list
+    gcloud services enable apigateway.googleapis.com
+    gcloud services enable servicemanagement.googleapis.com
+    gcloud services enable servicecontrol.googleapis.com
+    gcloud services list
 
 Create your API definition
 
-    % gcloud api-gateway apis create sendhttprequest \
+    gcloud api-gateway apis create sendhttprequest \
         --project=$(gcloud config get-value project)
-    % gcloud api-gateway apis describe sendhttprequest
-    createTime: '2021-04-13T13:20:19.745554655Z'
-    displayName: sendhttprequest
-    managedService: sendhttprequest-0lc5wdz0ordgs.apigateway.investdemo-300915.cloud.goog
-    name: projects/investdemo-300915/locations/global/apis/sendhttprequest
-    state: ACTIVE
-    updateTime: '2021-04-13T13:21:58.456459123Z'
+    gcloud api-gateway apis describe sendhttprequest
 
 Open the file `sendhttprequest.yaml` and edit values as appropriate (like the `x-google-backend`)
 
-    % nano sendhttprequest.yaml
+    nano sendhttprequest.yaml
 
 Check you have a service account you can use for the API gateway. If not, then create one using the 
 
-    % gcloud iam service-accounts list
-    % # Create an account via...
-    % gcloud iam service-accounts sendhttprequest \
-                add-iam-policy-binding \
-                --member user:<USER_EMAIL> \
-                -role roles/iam.serviceAccountUser
+    gcloud iam service-accounts list
+    # Create an account via...
+    gcloud iam service-accounts create sendhttprequest
+    gcloud iam service-accounts list
+    gcloud iam service-accounts \
+        add-iam-policy-binding \
+        <sendhttprequestEmailAddr> \
+        --role='roles/iam.serviceAccountUser' \
+        --member user:<USER_EMAIL>
 
 Grant them access to the API services
 
@@ -129,11 +126,11 @@ Grant them access to the API services
 
 Create the API gateway
 
-    % gcloud api-gateway gateways create httpgateway \
+    gcloud api-gateway gateways create httpgateway \
         --api=sendhttprequest --api-config=sendhttprequest \
         --location=us-central1 \
         --project=$(gcloud config get-value project)
-    % gcloud api-gateway gateways describe httpgateway \
+    gcloud api-gateway gateways describe httpgateway \
         --location=us-central1 \
         --project=$(gcloud config get-value project)
     apiConfig: projects/127131513455/locations/global/apis/sendhttprequest/configs/sendhttprequest
@@ -155,19 +152,19 @@ Cleaning Up
 -----------
 You can clean the function up using...
 
-    % gcloud api-gateway gateways delete httpgateway \
+    gcloud api-gateway gateways delete httpgateway \
         --location=us-central1 \
         --project=$(gcloud config get-value project)
-    % gcloud api-gateway api-configs delete sendhttprequest \
+    gcloud api-gateway api-configs delete sendhttprequest \
         --api=sendhttprequest  --project=$(gcloud config get-value project) 
-    % gcloud api-gateway apis delete sendhttprequest
+    gcloud api-gateway apis delete sendhttprequest
     
-    % gcloud services disable apigateway.googleapis.com --force && \
+    gcloud services disable apigateway.googleapis.com --force && \
         gcloud services disable servicemanagement.googleapis.com --force && \
         gcloud services disable servicecontrol.googleapis.com --force
 
-    % mvn clean
-    % gcloud functions delete sendhttprequest
+    mvn clean
+    gcloud functions delete sendhttprequest
 
 Notes
 -----

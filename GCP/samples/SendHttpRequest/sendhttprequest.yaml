@@ -21,7 +21,7 @@ paths:
       operationId: sendhttprequestget
       x-google-backend:
         # https://GCP_REGION-PROJECT_ID.cloudfunctions.net/function
-        address: https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest 
+        address: https://us-central1-contini-9c93495766a50b89.cloudfunctions.net/sendhttprequest 
       responses:
         '200':
           description: A successful response
@@ -43,7 +43,7 @@ paths:
       operationId: sendhttprequestpost
       x-google-backend:
         # https://GCP_REGION-PROJECT_ID.cloudfunctions.net/function
-        address: https://us-central1-investdemo-300915.cloudfunctions.net/sendhttprequest 
+        address: https://us-central1-contini-9c93495766a50b89.cloudfunctions.net/sendhttprequest 
       responses:
         '200':
           description: A successful response

@@ -58,3 +58,5 @@ resource "azurerm_linux_function_app" "funcApp" {
     }
   }
 }
+
+# azurerm_private_endpoint

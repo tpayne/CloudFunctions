@@ -10,4 +10,4 @@ COPY NoSQLSpanner ./NoSQLSpanner
 COPY SendHttpRequest ./SendHttpRequest
 COPY SimpleHttpFunction ./SimpleHttpFunction
 
-RUN mvn package 
+RUN mvn -q clean package 

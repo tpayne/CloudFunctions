@@ -11,3 +11,11 @@ COPY SendHttpRequest ./SendHttpRequest
 COPY SimpleHttpFunction ./SimpleHttpFunction
 
 RUN mvn -q clean package 
+
+FROM us-central1-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/java21 as runner
+
+WORKDIR /app
+COPY --from=imagebuilder AdvancedHttpFunction/target/*.jar ./AdvancedHttpFunction/
+COPY --from=imagebuilder NoSQLSpanner/target/*.jar ./NoSQLSpanner/
+COPY --from=imagebuilder SimpleHttpFunction/target/*.jar ./SimpleHttpFunction/
+COPY --from=imagebuilder SendHttpRequest/target/*.jar ./SendHttpRequest/

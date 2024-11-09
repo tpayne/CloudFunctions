@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 concurrency:
-  group: ${{ github.ref }}Docker
+  group: ${{ github.ref }}CI
   cancel-in-progress: true
 
 jobs:

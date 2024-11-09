@@ -18,6 +18,10 @@ env:
   # IMAGE_NAME: ${{ github.repository }}
   # github.repository as <account>/<repo>
 
+concurrency:
+  group: ${{ github.ref }}Docker
+  cancel-in-progress: true
+
 jobs:
   buildPush:
     runs-on: ubuntu-latest

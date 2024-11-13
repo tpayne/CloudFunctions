@@ -67,6 +67,7 @@ The following notes may be useful.
 - https://docs.microsoft.com/en-us/azure/azure-functions/
 - https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption
 - https://docs.microsoft.com/en-us/azure/azure-functions/functions-get-started?pivots=programming-language-java
+- https://console.cloud.google.com/artifacts/docker/serverless-runtimes/us-central1/google-22-full/runtimes%2Fjava21?pli=1
 
 `Google Cloud Platform`
 - https://cloud.google.com/functions/

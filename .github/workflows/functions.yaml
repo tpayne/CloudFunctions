@@ -63,7 +63,7 @@ jobs:
       # https://github.com/docker/build-push-action
       - name: Build and Push Function Docker image
         id: build-and-push
-        uses: docker/build-push-action@8796455d3250bab0b8ea17630e10645c29a1249a
+        uses: docker/build-push-action@11be14d908760a0756f045980728ec5fb7880f74
         with:
           context: Azure/Python/httpGitHub/
           push: ${{ github.event_name != 'pull_request' }}
@@ -80,7 +80,7 @@ jobs:
       # https://github.com/docker/build-push-action
       - name: Build and Push Function NodeJS Docker image
         id: build-and-push1
-        uses: docker/build-push-action@8796455d3250bab0b8ea17630e10645c29a1249a
+        uses: docker/build-push-action@11be14d908760a0756f045980728ec5fb7880f74
         with:
           context: Azure/NodeJS/httpGitHub/
           push: ${{ github.event_name != 'pull_request' }}

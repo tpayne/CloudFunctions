@@ -9,7 +9,7 @@ com-google-code-gson-gson = "2.13.1"
 com-google-guava-guava-testlib = "33.4.8-jre"
 com-google-truth-truth = "1.4.4"
 junit-junit = "4.13.2"
-org-mockito-mockito-core = "5.17.0"
+org-mockito-mockito-core = "5.18.0"
 
 [libraries]
 com-google-cloud-functions-function-maven-plugin = { module = "com.google.cloud.functions:function-maven-plugin", version.ref = "com-google-cloud-functions-function-maven-plugin" }

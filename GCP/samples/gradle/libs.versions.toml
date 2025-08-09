@@ -4,7 +4,7 @@
 [versions]
 com-google-cloud-functions-function-maven-plugin = "0.11.1"
 com-google-cloud-functions-functions-framework-api = "1.1.4"
-com-google-cloud-google-cloud-spanner = "6.95.1"
+com-google-cloud-google-cloud-spanner = "6.98.0"
 com-google-code-gson-gson = "2.13.1"
 com-google-guava-guava-testlib = "33.4.8-jre"
 com-google-truth-truth = "1.4.4"

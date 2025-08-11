@@ -17,7 +17,7 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Build GCP samples with Docker
       run:  (cd GCP/samples && docker build . -t gcp-samples:1.0 && docker rmi gcp-samples:1.0)
     - name: Build Azure samples with Docker

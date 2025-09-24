@@ -5,7 +5,7 @@
 com-google-cloud-functions-function-maven-plugin = "0.11.1"
 com-google-cloud-functions-functions-framework-api = "1.1.4"
 com-google-cloud-google-cloud-spanner = "6.100.0"
-com-google-code-gson-gson = "2.13.1"
+com-google-code-gson-gson = "2.13.2"
 com-google-guava-guava-testlib = "33.4.8-jre"
 com-google-truth-truth = "1.4.4"
 junit-junit = "4.13.2"

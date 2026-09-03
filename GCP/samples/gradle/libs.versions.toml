@@ -2,7 +2,7 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
-com-google-cloud-functions-function-maven-plugin = "0.11.1"
+com-google-cloud-functions-function-maven-plugin = "0.11.2"
 com-google-cloud-functions-functions-framework-api = "1.1.4"
 com-google-cloud-google-cloud-spanner = "6.100.0"
 com-google-code-gson-gson = "2.13.2"
